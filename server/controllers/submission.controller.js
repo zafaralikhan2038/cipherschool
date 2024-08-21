@@ -2,6 +2,7 @@ import asyncHandler from "express-async-handler";
 import { Submission } from "../models/submission.model.js";
 import { Test } from "../models/test.model.js";
 import { Question } from "../models/question.model.js";
+import { sendTestSubmissionDetails } from "../utils/email.js"; // Update with the correct path
 
 const submitTest = asyncHandler(async (req, res) => {
   const { testId, selections } = req.body;
@@ -44,6 +45,14 @@ const submitTest = asyncHandler(async (req, res) => {
       success: false,
       message: "Something went wrong. Failed to submit",
     });
+  }
+
+  // Sending the test submission details via email
+  try {
+    await sendTestSubmissionDetails(req.user, test.name, score);
+    console.log("Test submission email sent successfully");
+  } catch (error) {
+    console.error("Failed to send test submission email:", error);
   }
 
   res.status(201).json({
