@@ -9,7 +9,7 @@ Welcome to the Onlie Exam Portal. The Online Exam Portal is a full-stack web app
 
 ## After Admin Login
 email - raushn17419@gmail.com
-pssword - 12345
+password - 12345
 <img width="450px;" src="https://res.cloudinary.com/dbl03sf0r/image/upload/v1724246019/exam/gen_d8ugg3.png"/>
 <img width="450px;" src="https://res.cloudinary.com/dbl03sf0r/image/upload/v1724246019/exam/abt_ciccou.png"/>
 
